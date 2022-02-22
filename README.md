@@ -1,1 +1,6 @@
-# flipkart-django-project
+#flipkart-django-project
+
+
+Running this project
+
+python -m venv venv
