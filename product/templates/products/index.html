@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title>Product</title>
+{% include 'products/header.html' %}
+
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Product List</h1>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-10">
+                <table class="table table-bordered table-striped table-success">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                            <th>Available Stock</th>
+                            <th>Product Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product_show in product %}
+                        <tr>
+                        <td>{{product_show.product_name}}</td>
+                        <td>{{product_show.product_price}}</td>
+                        <td>{{product_show.product_description}}</td>
+                        <td>{{product_show.stock}}</td>
+                        <td><img src="/{{product_show.image}}" alt="" width="200"></td>
+                       
+                
+                    </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+    {% endblock %}
